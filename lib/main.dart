@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_api/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,32 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("YouTube"),
-      ),
-      body: ListView.builder(
-
-      ),
-
-
-      drawer: Drawer(),
-      
+    return MaterialApp(
+      home: Homepage(),
     );
   }
 }
-class  extends StatefulWidget {
-  const ({ Key? key }) : super(key: key);
 
-  @override
-  _State createState() => _State();
-}
-
-class _State extends State<> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
-    );
-  }
-}
