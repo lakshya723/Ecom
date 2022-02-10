@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_api/home_page.dart';
+import 'package:youtube_api/pages/home_page.dart';
+import 'package:youtube_api/pages/login_page.dart';
+import 'package:youtube_api/utils/routes.dart';
+import 'package:youtube_api/utils/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +14,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Homepage(),
+      themeMode: ThemeMode.light,
+      theme: MyTheme.lightTheme(context),
+    
+      initialRoute: "/",
+      routes: {
+        "/": (context) => Homepage(), 
+        MyRoutes.homeRoute: (context) => Homepage(), 
+        MyRoutes.loginRoute: (context) => Loginpage(), 
+
+      },
+
+      
     );
   }
 }
