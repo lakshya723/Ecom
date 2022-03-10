@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_api/pages/home_page.dart';
+import 'package:youtube_api/pages/login_page.dart';
+import 'package:youtube_api/utils/routes.dart';
+import 'package:youtube_api/utils/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,32 +13,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("YouTube"),
-      ),
-      body: ListView.builder(
+    return MaterialApp(
+      themeMode: ThemeMode.light,
+      theme: MyTheme.lightTheme(context),
+    
+      initialRoute: "/",
+      routes: {
+        "/": (context) => Homepage(), 
+        MyRoutes.homeRoute: (context) => Homepage(), 
+        MyRoutes.loginRoute: (context) => Loginpage(), 
 
-      ),
+      },
 
-
-      drawer: Drawer(),
       
     );
   }
 }
-class  extends StatefulWidget {
-  const ({ Key? key }) : super(key: key);
 
-  @override
-  _State createState() => _State();
-}
-
-class _State extends State<> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
-    );
-  }
-}
